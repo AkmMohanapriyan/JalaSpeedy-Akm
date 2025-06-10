@@ -6,8 +6,8 @@ import {
   updateSupplier,
   deleteSupplier
 } from '../controllers/supplierController.js'
-import { protect } from '../middlewares/authMiddleware.js'
-import { authorizeRoles } from '../middlewares/roleMiddleware.js'
+import { protect } from '../middleware/authMiddleware.js'
+import { authorizeRoles } from '../middleware/roleMiddleware.js'
 
 const router = express.Router()
 

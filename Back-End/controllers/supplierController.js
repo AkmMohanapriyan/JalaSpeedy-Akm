@@ -8,6 +8,12 @@ export const addSupplier = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' })
     }
 
+    // Check if supplier already exists
+    const existingSupplier = await Supplier.findOne({ contact });
+    if (existingSupplier) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
+
     const supplier = await Supplier.create({ name, contact, address })
     res.status(201).json({
       id: supplier._id,
