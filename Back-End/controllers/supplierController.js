@@ -53,3 +53,29 @@ export const getAllSuppliers = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message })
   }
 }
+
+// Update supplier - Admin only
+export const updateSupplier = async (req, res) => {
+  try {
+    const { name, contact, address } = req.body
+    const supplier = await Supplier.findById(req.params.id)
+
+    if (!supplier) {
+      return res.status(404).json({ message: 'Supplier not found' })
+    }
+
+    supplier.name = name || supplier.name
+    supplier.contact = contact || supplier.contact
+    supplier.address = address || supplier.address
+
+    const updated = await supplier.save()
+
+    res.status(200).json({
+      id: updated._id,
+      name: updated.name,
+      message: 'Supplier updated successfully'
+    })
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message })
+  }
+}
