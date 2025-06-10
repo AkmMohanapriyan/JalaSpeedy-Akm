@@ -38,3 +38,18 @@ export const getSupplierById = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message })
   }
 }
+
+
+// List all suppliers - Admin, User
+export const getAllSuppliers = async (req, res) => {
+  try {
+    const suppliers = await Supplier.find({})
+    const formatted = suppliers.map(s => ({
+      id: s._id,
+      name: s.name
+    }))
+    res.status(200).json(formatted)
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message })
+  }
+}
