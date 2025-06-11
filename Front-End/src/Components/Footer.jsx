@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/index.css'; 
 import Logo from '../Assets/Logo.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -17,11 +18,14 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
-          <a href="#">Home</a> |
-          <a href="#">About</a> |
-          <a href="#">Features</a> |
-          <a href="#">Contact</a>
+
+          <Link to="/home">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/features">Features</Link>
+          <Link to="/contact">Contact</Link>
+
         </div>
+
       </div>
     </footer>
   );

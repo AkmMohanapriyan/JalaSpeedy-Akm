@@ -6,6 +6,10 @@ import Login from './Pages/Login'
 import Slidebar from './Components/Slidebar'
 import UserRegister from './Pages/userRegister'
 import SupplierRegister from './Pages/supplierRegister'
+import Home from './Pages/Home'
+import { About } from './Pages/About'
+import Features from './Pages/Features'
+import Contact from './Pages/Contact'
 import { Route, Routes } from 'react-router-dom'
 
 
@@ -24,9 +28,13 @@ function App() {
       <Route path='/slidebar' element={<Slidebar></Slidebar>}></Route>
       <Route path='/userRegister' element={<UserRegister></UserRegister>}></Route>
       <Route path='/supplierRegister' element={<SupplierRegister></SupplierRegister>}></Route>
+      <Route path='/home' element={<Home></Home>}></Route>
+      <Route path='/about' element={<About></About>}></Route>
+      <Route path='/features' element={<Features></Features>}></Route>
+      <Route path='/contact' element={<Contact></Contact>}></Route>
 
       {/* Default Route */}
-      <Route path='/' element={<Login></Login>}></Route>
+      <Route path='/' element={<Home></Home>}></Route>
     </Routes>
 
     <Footer></Footer>
