@@ -4,6 +4,111 @@ import '/src/index.css'; // Ensure this path is correct based on your project st
 
 const HomePage = () => {
   return (
+    <>
+
+    <style>
+      {`
+
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+        height: 83vh;
+
+      }
+
+.intro-section {
+  background-color: #f6f6f6;
+  color: black;
+  min-height: 400px;
+  padding: 10px 20px;
+}
+
+.jala {
+  color: #40A1F0;
+  font-weight: bold;
+}
+
+.speedy {
+  color: orangered;
+  font-weight: bold;
+}
+
+.btn-get-started {
+  display: inline-block;
+  background-color: #f6f6f6;
+  color: black;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-get-started:hover {
+  background-color: black;
+  color: white;
+}
+
+.features-section {
+  background-color: white;
+  height: 396px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card {
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
+  height: 100%;
+}
+
+.icon {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .intro-section {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+  
+  .intro-section h1 {
+    font-size: 28px;
+  }
+  
+  .feature-card {
+    margin-bottom: 20px;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-section h1 {
+    font-size: 24px;
+  }
+  
+  .feature-card {
+    padding: 15px;
+  }
+}
+
+      `}
+    </style>
+    
+    
     <div className="container-fluid p-0">
       {/* Intro Section */}
       <section className="intro-section d-flex align-items-center justify-content-center">
@@ -65,6 +170,8 @@ const HomePage = () => {
         </div>
       </section>
     </div>
+
+    </>
   );
 };
 
